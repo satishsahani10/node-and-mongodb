@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="../Scripts/App.js"></script>
+<script src="../Controllers/UserController.js"></script>
+<script src="../Services/UserService.js"></script>
+<body>
+
+<div data-ng-app="NodeApp">
+	<div data-ng-controller="UserController">
+		{{message}}
+		<form data-ng-show="isUserFormShown">
+			<div data-ng-show="isUserDrpdwnShown">
+			<span>Please select user to {{action}}:
+			<select data-ng-model="selectedName" data-ng-change="updateUserInfo()" data-ng-options="user.userEmail for user in userList"></select></span>
+			</div><br><br>
+			<div data-ng-show="isEmailShown">
+		    	Email: <input type="text" data-ng-model="userEmail"><br>
+		   	</div><br>
+		   	<div data-ng-show="isPasswordShown">
+		    	Password: <input type="text" data-ng-model="userPassword"><br>
+		   	</div>
+		   	<button data-ng-show = "showCreateBtn" data-ng-click="CreateUser(userEmail,userPassword)">Create</button>
+		   	<button data-ng-show = "showUpdateBtn" data-ng-click="UpdateUser(userEmail,userPassword)">Update</button>
+		   	<button data-ng-show = "showDeleteBtn" data-ng-click="DeleteUser()">Delete</button>
+	  	</form>
+	  	<br><br>
+	  	<div data-ng-show="isUserListShown">
+	  		<h5> List of users:</h5>
+	  		<table>
+	  		<tr>
+			    <th>Email</th>
+			    <th>Password</th>
+			  </tr>
+			  <tr ng-repeat="user in userList">
+			    <td>{{ user.userEmail }}</td>
+			    <td>{{ user.userPassword }}</td>
+			  </tr>
+			</table>
+	  	</div>
+	  	<br><br>
+	    
+	    <button data-ng-click="showUserForm('create')">Create User</button>
+	    <button data-ng-click="ShowAllUser()">Show All User</button>
+	    <button data-ng-click="showUserForm('update')">Update User</button>
+	    <button data-ng-click="showUserForm('delete')">Delete User</button>
+	</div>
+</div>
+
+</body>
+</html>
