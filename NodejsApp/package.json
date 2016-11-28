@@ -1,0 +1,29 @@
+{
+  "name": "nodejsmongodb",
+  "version": "1.0.0",
+  "description": "REST API using node js and mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satishsahani10/node-and-mongodb.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "and",
+    "mongodb"
+  ],
+  "author": "Satish Sahani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/satishsahani10/node-and-mongodb/issues"
+  },
+  "homepage": "https://github.com/satishsahani10/node-and-mongodb#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-generator": "^4.14.0"
+  }
+}
